@@ -1,5 +1,7 @@
 package com.codegym;
 
+import com.codegym.service.CustomerServiceImpl;
+import com.codegym.service.ICustomerService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -67,6 +69,13 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         viewResolver.setCharacterEncoding("UTF-8");
         return viewResolver;
     }
+
+    @Bean
+    public ICustomerService customerService(){
+        return new CustomerServiceImpl();
+    }
+
+
 
 //    @Bean
 //    public DataSource dataSource() {
