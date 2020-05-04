@@ -2,7 +2,7 @@ package com.codegym.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customers")
+@Table
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
