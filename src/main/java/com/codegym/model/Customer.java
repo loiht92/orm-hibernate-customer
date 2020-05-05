@@ -2,19 +2,29 @@ package com.codegym.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String name;
+    @Column
     private String email;
+    @Column
     private String address;
 
     public Customer(){
 
+    }
+
+    public Customer(Long id, String name, String email, String address){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.address = address;
     }
 
     public Customer(String name, String email, String address){
